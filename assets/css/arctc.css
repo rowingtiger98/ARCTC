@@ -1,0 +1,254 @@
+/* ----------------------- */
+/* Styling Specific to MDM */
+/* ----------------------- */
+.purple_note {
+  background-color: #630fa4;
+  margin: 0.25em;
+  padding: 0.25em;
+  color: #fefefe;  
+}
+
+.bold_heading  {
+  font-weight: 800;
+  display: block;
+  font-size: 1.75em;
+  margin: 0 0 0.25em 0;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+p.slim {
+	line-height: 1.5em;
+	margin: 0 0 1em 0;
+}
+
+.item_removal_container {
+  border-bottom: 1px solid white;
+  margin: 2em 0.5em;
+  overflow: hidden;
+}
+
+	.item_removal_container:last-of-type {
+	border-bottom: 0px solid white;
+	margin: 2em 0.5em 0 0.5em;
+	}
+	
+	.item_removal_container:first-of-type {
+	margin: 0 0.5em 2em 0.5em;
+	}
+
+
+.item_removal_container .image.left{
+  top: 0;
+}
+
+.ron {
+  z-index: 1000;
+  display: unset !important;
+}
+
+table.current_contacts_table {
+    font-size: 0.85em;
+}
+
+.affiliation {
+    display: none;
+}
+
+    .affiliation.active {
+        display: block;
+    }
+
+
+/* Contact Information */
+.collect_contactinfo {
+    display: none;
+}
+
+    .collect_contactinfo.active {
+        display: block;
+    }  
+
+/* Incident Report Information */
+.collect_carinfo {
+    display: none;
+}
+
+    .collect_carinfo.active {
+        display: block;
+    }
+    
+    
+.vehicle_block {
+  display: none;
+}
+
+  .vehicle_block.active {
+    display:block;
+  }
+
+
+.reports_table {
+    display: none;
+}
+    .reports_table.active {
+        display: block;
+    }
+
+/* Admin Tools Section - stretch each row of tool cards to a uniform height */
+.tools_row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .tools_row > * {
+        display: flex;
+    }
+
+/* View / Edit Subscribers Table */
+#subscriber_table {
+    border: 1px solid #cccccc;
+    table-layout: fixed;
+}
+
+    /* table-layout:fixed makes column widths (below) authoritative. Without it, a plain
+       max-width on a td is only a soft hint that browsers can override based on content -
+       that's why a percentage max-width on the Notes column alone wasn't holding. */
+    #subscriber_table th:nth-child(1) { width: 3%; }
+    #subscriber_table th:nth-child(2) { width: 10%; }
+    #subscriber_table th:nth-child(3) { width: 18%; }
+    #subscriber_table th:nth-child(4) { width: 9%; }
+    #subscriber_table th:nth-child(5) { width: 12%; }
+    #subscriber_table th:nth-child(6) { width: 8%; }
+    #subscriber_table th:nth-child(7) { width: 4%; }
+    #subscriber_table th:nth-child(8) { width: 5%; }
+    #subscriber_table th:nth-child(9) { width: 25%; }
+    #subscriber_table th:nth-child(10) { width: 6%; }
+
+    #subscriber_table th:first-child,
+    #subscriber_table td:first-child {
+        text-align: center;
+    }
+
+    /* The zebra striping itself comes from the sitewide table tbody tr:nth-child(2n+1)
+       rule in main.css (set to #dcdcdc there) - it paints reliably where a scoped
+       #subscriber_table override didn't, since this table is populated via AJAX. */
+
+    #subscriber_table thead th {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    .copy_email_link {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 0.4em;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+
+    .sub_action_icon {
+        font-size: 1.3em;
+        margin: 0 0.3em;
+        color: #444444;
+        cursor: pointer;
+    }
+
+        .sub_action_icon:hover {
+            color: #000000;
+        }
+
+    #subscriber_table .sub_notes_column {
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+/* View / Edit Subscribers - Edit Modal */
+.sub_modal_overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+    .sub_modal_overlay.active {
+        display: block;
+    }
+
+.sub_modal_box {
+    position: relative;
+    background: #ffffff;
+    color: #444444;
+    max-width: 40em;
+    margin: 5% auto;
+    padding: 2em;
+    border-radius: 6px;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+    .sub_modal_box label {
+        display: block;
+        margin-top: 1em;
+        font-weight: 600;
+    }
+
+    .sub_modal_box input[type="text"],
+    .sub_modal_box textarea {
+        width: 100%;
+    }
+
+.sub_modal_close {
+    position: absolute;
+    top: 0.5em;
+    right: 0.75em;
+    font-size: 1.5em;
+    line-height: 1em;
+    color: #888888;
+    text-decoration: none;
+}
+
+    .sub_modal_close:hover {
+        color: #000000;
+    }
+
+/* View / Edit Subscribers - Filters */
+.subscriber_filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    align-items: flex-start;
+    margin: 1.5em 0;
+}
+
+    .subscriber_filter_item > label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.4em;
+    }
+
+.subscriber_pagination_top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.75em;
+}
+
+.sub_sort_arrow {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 0.3em;
+    color: #ffffff !important;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+}
+
+    .sub_sort_arrow.rotated {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
