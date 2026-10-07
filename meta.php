@@ -1,0 +1,4 @@
+		<meta name="description" content="The Alliance for Reedy Creek Trenton Corridor (ARCTC) exists to preserve and enhance the safety and environment of the areas along Trenton and Reedy Creek Roads near William B. Umstead State Park. We support use of the greenways, parks, and roadways by neighbors and recreational users while seeking to minimize conflict with vehicle traffic. We are committed to protecting the local park, forest, farm and greenway areas."/>
+		<meta name="keywords" content="Reedy Creek Greenway,Umstead State Park,Schenck Memorial Forest,Trenton Road Connector Project,Bandwidth,Blue Ridge Corridor,DHHS,Raleigh City Council,ARCTC" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />

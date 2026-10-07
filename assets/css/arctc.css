@@ -1,6 +1,24 @@
 /* ----------------------- */
 /* Styling Specific to MDM */
 /* ----------------------- */
+
+/* Site title in the header: show the short "ARCTC" form while the full nav links are
+   visible (they were overlapping with the full name at those widths), and swap to the
+   full name once the nav collapses into the hamburger menu. 980px matches the same
+   breakpoint main.css already uses to hide #header nav / show .navPanelToggle. */
+   .site-title-full {
+    display: none;
+}
+
+@media screen and (max-width: 980px) {
+    .site-title-short {
+        display: none;
+    }
+    .site-title-full {
+        display: inline;
+    }
+}
+
 .purple_note {
   background-color: #630fa4;
   margin: 0.25em;
@@ -118,12 +136,13 @@ table.current_contacts_table {
     #subscriber_table th:nth-child(2) { width: 10%; }
     #subscriber_table th:nth-child(3) { width: 18%; }
     #subscriber_table th:nth-child(4) { width: 9%; }
-    #subscriber_table th:nth-child(5) { width: 12%; }
-    #subscriber_table th:nth-child(6) { width: 8%; }
-    #subscriber_table th:nth-child(7) { width: 4%; }
-    #subscriber_table th:nth-child(8) { width: 5%; }
-    #subscriber_table th:nth-child(9) { width: 25%; }
-    #subscriber_table th:nth-child(10) { width: 6%; }
+    #subscriber_table th:nth-child(5) { width: 9%; }
+    #subscriber_table th:nth-child(6) { width: 10%; }
+    #subscriber_table th:nth-child(7) { width: 7%; }
+    #subscriber_table th:nth-child(8) { width: 4%; }
+    #subscriber_table th:nth-child(9) { width: 5%; }
+    #subscriber_table th:nth-child(10) { width: 20%; }
+    #subscriber_table th:nth-child(11) { width: 5%; }
 
     #subscriber_table th:first-child,
     #subscriber_table td:first-child {
@@ -252,3 +271,66 @@ table.current_contacts_table {
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
     }
+/* Neighborhood select with adjacent "Other" text box */
+.neighborhood_group {
+    display: flex;
+    gap: 0.75em;
+    align-items: center;
+}
+
+    .neighborhood_group select,
+    .neighborhood_group input[type="text"] {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+/* View / Edit Neighborhoods */
+#neighborhood_table {
+    table-layout: fixed;
+}
+
+    /* Fixed layout so the Notes column holds at 55% (same reason as #subscriber_table). */
+    #neighborhood_table th:nth-child(1) { width: 22%; }
+    #neighborhood_table th:nth-child(2) { width: 10%; }
+    #neighborhood_table th:nth-child(3) { width: 9%; }
+    #neighborhood_table th:nth-child(4) { width: 55%; }
+    #neighborhood_table th:nth-child(5) { width: 4%; }
+
+    #neighborhood_table th {
+        white-space: nowrap;
+    }
+
+    #neighborhood_table .sub_notes_column {
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+.hood_modal_box {
+    max-width: 60em;
+}
+
+#neighborhood_table tr.hood_not_in_cor td {
+    color: #999999;
+}
+
+#neighborhood_table tr.hood_extra_row td {
+    background-color: #f4f4f4;
+}
+
+.hood_checkbox_row {
+    margin-top: 1em;
+}
+
+    .sub_modal_box .hood_checkbox_row label {
+        display: inline-block;
+        margin-top: 0;
+    }
+
+/* Magnifying glass next to each neighborhood's subscriber count */
+.hood_view_icon {
+    margin-left: 0.5em;
+    font-size: 1.15em;
+    text-decoration: none;
+    border-bottom: 0;
+}
